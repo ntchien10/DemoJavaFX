@@ -1,15 +1,12 @@
 package com.example.controller;
 
 import com.example.dao.LoginDao;
-import com.example.dao.OracleJDBCConnection;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -23,23 +20,14 @@ import javafx.stage.Stage;
 import org.controlsfx.control.textfield.CustomPasswordField;
 import org.controlsfx.control.textfield.CustomTextField;
 import java.io.FileInputStream;
-import java.sql.*;
-
-//import java.sql.*;
 
 public class Login extends Application {
-    Scene scene;
     VBox root=new VBox();
     ImageView anhBia,anhChu,iconUser,imageViewMatKShow;
-    TextField username;
-    PasswordField password;
     Button btnLogin;
     Text footer;
     String pass;
     private Scene tableViewScene;
-    public void settableViewScene(Scene scene) {
-        tableViewScene = scene;
-    }
 
     private static final  Image iconUsername=new Image("F:\\Intelij\\HelloWorld\\src\\main\\resources\\images\\iconUser.png");
     private static final  Image iconPassword=new Image("F:\\Intelij\\HelloWorld\\src\\main\\resources\\images\\iconPass.png");
@@ -136,6 +124,12 @@ public class Login extends Application {
 
                 if(LoginDao.Authentication(username.getText(),password.getText())){
                     System.out.println("success");
+                    TableViewExample tableViewExample=new TableViewExample();
+                    try {
+                        tableViewExample.start(stage);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
                 else System.out.println("Failure");
             }
