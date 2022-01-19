@@ -137,10 +137,6 @@ public class Login extends Application {
 
                     TableViewExample tableViewExample=new TableViewExample();
 
-//                    Scene tableViewScene=new Scene(tableViewExample.root);
-//                    Stage window= (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-//                    window.setScene(tableViewScene);
-//                    window.show();
                 }
                 else System.out.println("Failure");
             }
