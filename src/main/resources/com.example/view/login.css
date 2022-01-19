@@ -1,5 +1,6 @@
 .root{
     -fx-background-color: #FFFFFF;
+    /*-fx-alignment: center top;*/
 }
 #username {
     -fx-max-width: 315px;
@@ -24,6 +25,10 @@
     -fx-font-size: 16;
     -fx-prompt-text-fill: #666666;
     -fx-padding: 0 0 0 10;
+    /*-fx-opacity: 0.7;*/
+    /*-fx-background-image:url('/images/iconPass.png');*/
+    /*-fx-background-repeat: no-repeat;*/
+    /*-fx-background-position: left center;*/
 }
 #btnLogin{
     -fx-alignment: center;
@@ -54,4 +59,7 @@
     -fx-font-style: normal;
     -fx-font-weight: normal;
     -fx-font-size: 12px;
+    /* identical to box height */
+
+
 }
