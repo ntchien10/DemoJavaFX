@@ -165,7 +165,7 @@ public class TableViewExample extends Application {
 
 
             String a = ((TableViewExampleModel) table.getItems().get(i)).getSeverity();
-            System.out.println(a);
+
             LoaiThietBiCol.setCellFactory(tableViewExampleModelStringTableColumn -> {
                 return new TableCell<TableViewExampleModel, String>() {
                     @Override
