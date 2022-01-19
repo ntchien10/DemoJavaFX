@@ -1,0 +1,10 @@
+#btnSubmit{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+
+}
+.root{
+    -fx-background-color: lightblue;
+}
+
+

@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.dao.LoginDao;
 import com.example.dao.OracleJDBCConnection;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -132,11 +133,9 @@ public class Login extends Application {
         btnLogin.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                if(Authentication(username.getText(),password.getText())){
+
+                if(LoginDao.Authentication(username.getText(),password.getText())){
                     System.out.println("success");
-
-                    TableViewExample tableViewExample=new TableViewExample();
-
                 }
                 else System.out.println("Failure");
             }
@@ -158,24 +157,7 @@ public class Login extends Application {
         stage.show();
     }
 
-    public static Boolean Authentication(String username,String password) {
-        try{
-            Connection con= OracleJDBCConnection.getJJDBCConnection();
-            Statement statement=con.createStatement();
-            String sql= "SELECT * FROM CHIEN_LOGIN";
-            ResultSet rs= statement.executeQuery(sql);
-            while ( rs.next()){
-                String user=rs.getString("USERNAME");
-                String pass=rs.getString("PASSWORD");
-                if (username.equals(user)&&password.equals(pass)){
-                    return true;
-                }
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return false;
-    }
+
 
     public void openFirstScene(ActionEvent actionEvent) {
         Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

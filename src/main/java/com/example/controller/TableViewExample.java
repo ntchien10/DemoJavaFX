@@ -218,7 +218,7 @@ public class TableViewExample extends Application {
         root.setPadding(new Insets(5));
         root.getChildren().add(table);
 
-        root.getStylesheets().add(getClass().getResource("main1.css").toExternalForm());
+        root.getStylesheets().add(getClass().getResource("tableViewExample.css").toExternalForm());
 
         stage.setTitle("TableView Example");
 

@@ -15,7 +15,7 @@ import java.io.IOException;
 
 
 
-public class Main1 extends Application {
+public class FormExample extends Application {
 
     GridPane root;
     Stage window;
@@ -42,7 +42,7 @@ public class Main1 extends Application {
         root.setHgap(20);
         root.setVgap(15);
 
-        root.getStylesheets().add(getClass().getResource("main1.css").toExternalForm());
+        root.getStylesheets().add(getClass().getResource("formExample.css").toExternalForm());
 
         window=stage;
 
