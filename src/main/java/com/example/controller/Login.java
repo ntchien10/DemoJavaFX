@@ -9,8 +9,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -24,7 +22,7 @@ import java.io.FileInputStream;
 public class Login extends Application {
     VBox root=new VBox();
     ImageView anhBia,anhChu,iconUser,imageViewMatKShow;
-    Button btnLogin;
+    public Button btnLogin;
     Text footer;
     String pass;
     private Scene tableViewScene;
@@ -35,7 +33,6 @@ public class Login extends Application {
     Image iconMatKShow=new Image("F:\\Intelij\\HelloWorld\\src\\main\\resources\\images\\dontshow.png",20,18,false,true);
     @Override
     public void start(Stage stage) throws Exception {
-
         root.setAlignment(Pos.TOP_CENTER);
         //anh bìa
         FileInputStream input = new FileInputStream("F://Intelij//HelloWorld//src//main//resources//images//careerbiulder1.png");
@@ -123,7 +120,7 @@ public class Login extends Application {
             public void handle(MouseEvent mouseEvent) {
 
                 if(LoginDao.Authentication(username.getText(),password.getText())){
-                    System.out.println("success");
+                    System.out.println("Success");
                     TableViewExample tableViewExample=new TableViewExample();
                     try {
                         tableViewExample.start(stage);
@@ -151,14 +148,5 @@ public class Login extends Application {
         stage.show();
     }
 
-
-
-    public void openFirstScene(ActionEvent actionEvent) {
-        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        primaryStage.setScene(tableViewScene);
-
-        TableViewExample tableViewExample=new TableViewExample();
-
-    }
-
 }
+

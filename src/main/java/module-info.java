@@ -14,5 +14,7 @@ module com.example.demojavafx {
     opens com.example.controller to javafx.fxml;
     opens com.example.model;
     opens com.example.dao;
+    opens com.example.view to javafx.fxml;
     exports com.example.controller;
+    exports com.example.view;
 }
